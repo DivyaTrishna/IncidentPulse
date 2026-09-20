@@ -1,0 +1,80 @@
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-feature-settings: "tnum";
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #232f42;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2f3d56;
+}
+
+/* Leaflet dark-mode tuning: the default tile/control chrome is light,
+   so we dim it to fit the command-center theme without needing a paid
+   dark tile provider. */
+.leaflet-container {
+  background: #0d1420;
+  font-family: inherit;
+}
+.leaflet-control-attribution {
+  background: rgba(10, 14, 20, 0.75) !important;
+  color: #7c8aa3 !important;
+}
+.leaflet-control-attribution a {
+  color: #3ba7ff !important;
+}
+.leaflet-control-zoom a {
+  background-color: #111826 !important;
+  color: #e2e8f0 !important;
+  border-color: #232f42 !important;
+}
+.leaflet-control-zoom a:hover {
+  background-color: #161f30 !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #111826;
+  color: #e2e8f0;
+  border: 1px solid #232f42;
+  border-radius: 8px;
+}
+.leaflet-popup-tip {
+  background: #111826;
+  border: 1px solid #232f42;
+}
+.leaflet-popup-content {
+  margin: 10px 12px;
+}
+
+.ip-marker-pulse {
+  animation: markerPulse 1.8s ease-in-out infinite;
+}
+@keyframes markerPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 167, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 167, 255, 0);
+  }
+}
